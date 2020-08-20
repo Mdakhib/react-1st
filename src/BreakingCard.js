@@ -13,7 +13,6 @@ function BreakingCard({ data }) {
           <h3>Status:<span>{data.status}</span></h3>
           <h3>Portrayed:<span >{data.portrayed}</span></h3>
           <h3>Appearance:<span >{data.appearance}</span></h3>
-          <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
         </div>
       </div>
       </div>
