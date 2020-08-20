@@ -6,7 +6,8 @@ function BreakingCard({ data }) {
     return (
       <div className="container-header">
           <div className="container">
-        <img className="container_img" src={data.img} />
+        <img className="container_img" src={data.img}/>
+        {/*  */}
         <h2 className="data_name">{data.name}</h2>
         <div className="data">
           <h3>Birthday: <span>{data.birthday}</span></h3>
