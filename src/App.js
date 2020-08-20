@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import BreakingCard from './BreakingCard'
+import API_URL from './API'
 
-function App() {
+class App extends React.Component {
+
+  state = {
+    feeds: []
+  };
+
+  fetchbreakingbad = () => {
+    fetch(API_URL, {
+      method: "GET"
+    })
+      .then(data => data.json())
+      .then(response => this.setState({ feeds: response }))
+    .catch(error=>console.log(error))
+  }
+  componentDidMount() {
+  this.fetchbreakingbad()
+}
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        this.state.feeds.map(obj => (
+          <BreakingCard data={obj}/>
+        ))
+      }
+      
     </div>
   );
+  }
 }
 
 export default App;
